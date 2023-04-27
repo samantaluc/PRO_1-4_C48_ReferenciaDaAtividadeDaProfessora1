@@ -8,9 +8,9 @@ class Game {
     this.leader1 = createElement("h2");
     this.leader2 = createElement("h2");
     this.playerMoving = false;
-    //C41//TA
+    //C47//TA
     this.leftKeyActive = false;
-    this.blast = false; //C42//SA
+    this.blast = false; //C48//SA
 
   }
 
@@ -41,7 +41,7 @@ class Game {
     car2 = createSprite(width / 2 + 100, height - 100);
     car2.addImage("car2", car2_img);
     car2.scale = 0.07;
-    car2.addImage("blast", blastImage); //C42//SA
+    car2.addImage("blast", blastImage); //C48//SA
 
     cars = [car1, car2];
 
@@ -322,7 +322,7 @@ class Game {
 
 
   handlePlayerControls() {
-    if (!this.blast) {
+    if (!this.blast) { //C48
 
       if (keyIsDown(UP_ARROW)) {
         this.playerMoving = true;
@@ -341,7 +341,7 @@ class Game {
         player.positionX += 5;
         player.update();
       }
-    }
+    } //C48
   }
   //C41 //SA
   handleObstacleCollision(index) {
